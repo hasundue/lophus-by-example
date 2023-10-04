@@ -1,5 +1,23 @@
 {
-  "version": "2",
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "npm:@noble/curves@1.2.0": "npm:@noble/curves@1.2.0",
+      "npm:@noble/hashes@1.3.2": "npm:@noble/hashes@1.3.2"
+    },
+    "npm": {
+      "@noble/curves@1.2.0": {
+        "integrity": "sha512-oYclrNgRaM9SsBUBVbb8M6DTV7ZHRTKugureoYEncY5c65HOmRzvSiTE3y5CYaPYJA/GVkrhXEoF0M3Ya9PMnw==",
+        "dependencies": {
+          "@noble/hashes": "@noble/hashes@1.3.2"
+        }
+      },
+      "@noble/hashes@1.3.2": {
+        "integrity": "sha512-MVC8EAQp7MvEcm30KWENFjgR+Mkmf+D189XJTkFIlwohU5hcBbn1ZkKq7KVTi2Hme3PMGF390DaL52beVrIihQ==",
+        "dependencies": {}
+      }
+    }
+  },
   "remote": {
     "https://deno.land/std@0.186.0/async/deferred.ts": "42790112f36a75a57db4a96d33974a936deb7b04d25c6084a9fa8a49f135def8",
     "https://deno.land/std@0.203.0/assert/assert.ts": "9a97dad6d98c238938e7540736b826440ad8c1c1e54430ca4c4e623e585607ee",
@@ -39,38 +57,23 @@
     "https://deno.land/x/async@v2.0.2/lock.ts": "fd7dc5b54c72d0093072adddb1691e1ae4a801c55b2015589454ea60f1c59adb",
     "https://deno.land/x/async@v2.0.2/mutex.ts": "312dcad7468c82f84fd018be157df451361ed19bdc12fd59af8d12b2e6c3ae28",
     "https://deno.land/x/async@v2.0.2/notify.ts": "3127ab5835c97527fdf978a5ec5844d71a2fd62a75988db6f175aac6f61259d0",
-    "https://deno.land/x/lophus@0.0.3/client.ts": "65b38c96c1cfbfcf5fb5a47309c778f8f584293576229f442bec097e216168bf",
-    "https://deno.land/x/lophus@0.0.3/core/nips/01.ts": "4927950026eb69fce16512dbed022ee37892d62595d75cfee82bdada3b3564b2",
-    "https://deno.land/x/lophus@0.0.3/core/nodes.ts": "704e2c2b7200d51cd912a5f181b184b0e8a77d47444fe261ed32d53e6b7c8835",
-    "https://deno.land/x/lophus@0.0.3/core/streams.ts": "c5f0bdae4b4b727760f472ed2006f4a3c7f797e9f4c3209666d4de71a898d019",
-    "https://deno.land/x/lophus@0.0.3/core/types.ts": "9275e82812ee7c8b70accf574ebc298f874178fecdf3f8b091c0f5282a420b9a",
-    "https://deno.land/x/lophus@0.0.3/core/websockets.ts": "287b0eadd51146252574b353d38e94a4bd5d9a79829c5d094d69aef2117dbd97",
-    "https://deno.land/x/lophus@0.0.3/core/x/async.ts": "5d0b855a1b0c0af9955978530108cf1b81645698093ed4e12a5804a2bc9f190c",
-    "https://deno.land/x/lophus@0.0.3/lib/env.ts": "99d080c81726cbf6717eb8842eeca47bb683c0b3532534343316aefd22bac73a",
-    "https://deno.land/x/lophus@0.0.3/lib/events.ts": "40e1f1b8b209d2d586c38bca3170e5fe129902069da0ace47f129489c6fcb75f",
-    "https://deno.land/x/lophus@0.0.3/lib/logging.ts": "367194e4d8a7090ff456756b5a298c027e6176447279ededde391838aa050f8e",
-    "https://deno.land/x/lophus@0.0.3/lib/pools.ts": "15db69a430cc96ce4b50a1bde4b99ea62f5cc898e7e4f121d5494d2468d509a0",
-    "https://deno.land/x/lophus@0.0.3/lib/signs.ts": "0221c3eb9d23383e736a6de9d0e384f017daa79ae284ab28d34f8953df6449d6",
-    "https://deno.land/x/lophus@0.0.3/lib/streams.ts": "4fe68d042006f20ff2f3800dee25d5ad230a320e9e978bc95f465a197ef46d69",
-    "https://deno.land/x/lophus@0.0.3/lib/times.ts": "ba5a0a5a08430993aac45e1262f97e38b04ac0fb69f6882153d2aea030abe442",
-    "https://deno.land/x/lophus@0.0.3/lib/x/noble.ts": "03e7790b1c15ad4d3cbaca7928f522dd91300b3f3f98c068b05ad1b686e7b77e"
-  },
-  "npm": {
-    "specifiers": {
-      "@noble/curves@1.2.0": "@noble/curves@1.2.0",
-      "@noble/hashes@1.3.2": "@noble/hashes@1.3.2"
-    },
-    "packages": {
-      "@noble/curves@1.2.0": {
-        "integrity": "sha512-oYclrNgRaM9SsBUBVbb8M6DTV7ZHRTKugureoYEncY5c65HOmRzvSiTE3y5CYaPYJA/GVkrhXEoF0M3Ya9PMnw==",
-        "dependencies": {
-          "@noble/hashes": "@noble/hashes@1.3.2"
-        }
-      },
-      "@noble/hashes@1.3.2": {
-        "integrity": "sha512-MVC8EAQp7MvEcm30KWENFjgR+Mkmf+D189XJTkFIlwohU5hcBbn1ZkKq7KVTi2Hme3PMGF390DaL52beVrIihQ==",
-        "dependencies": {}
-      }
-    }
+    "https://deno.land/x/lophus@0.0.6/core/clients.ts": "3ae55e5b82c40c2dba5e452db24d18cd72261c73a86ca089b567f0ac1fc3f306",
+    "https://deno.land/x/lophus@0.0.6/core/nodes.ts": "96fa349aad7895a4045b0bc32b9f9e0b2094fd5865db3cc335509c131cd70900",
+    "https://deno.land/x/lophus@0.0.6/core/relays.ts": "0dd897edcc3a616de8d20399260de8799d648293d9356ca05e8f73051ac83561",
+    "https://deno.land/x/lophus@0.0.6/core/streams.ts": "c5f0bdae4b4b727760f472ed2006f4a3c7f797e9f4c3209666d4de71a898d019",
+    "https://deno.land/x/lophus@0.0.6/core/types.ts": "253e12f79726b50f9fa3df9d0c3f69ddfcd8d757efb709390d979f33187fbb6c",
+    "https://deno.land/x/lophus@0.0.6/core/websockets.ts": "287b0eadd51146252574b353d38e94a4bd5d9a79829c5d094d69aef2117dbd97",
+    "https://deno.land/x/lophus@0.0.6/core/x/async.ts": "5d0b855a1b0c0af9955978530108cf1b81645698093ed4e12a5804a2bc9f190c",
+    "https://deno.land/x/lophus@0.0.6/lib/env.ts": "ad3c0f5faa0b7c040f4692627a538cf38c9117affc39f27ab04738b23d368b68",
+    "https://deno.land/x/lophus@0.0.6/lib/events.ts": "368ead8768a7a63682e58152ba3ee4b2cc7927f109f4895bee267ff669a33e8f",
+    "https://deno.land/x/lophus@0.0.6/lib/logging.ts": "367194e4d8a7090ff456756b5a298c027e6176447279ededde391838aa050f8e",
+    "https://deno.land/x/lophus@0.0.6/lib/pools.ts": "9b262b401ed9b314797163dde5f2b1a994a29bb6538bc9c2bde76f3318e9fe62",
+    "https://deno.land/x/lophus@0.0.6/lib/signs.ts": "94a124e68d2f3bd0978d700b5472aeba1980a9bbba301b5a778c35148eadf5ec",
+    "https://deno.land/x/lophus@0.0.6/lib/std/streams.ts": "9d3c5cba751bc7ec4b0b555854554c6ce56b3ffb9a2d7ddc54ef5050b9e96169",
+    "https://deno.land/x/lophus@0.0.6/lib/streams.ts": "79e35e8c47182be2c3e5074d1839dd245e760dc2a670ff1ee1066eebd1847cd1",
+    "https://deno.land/x/lophus@0.0.6/lib/times.ts": "ba5a0a5a08430993aac45e1262f97e38b04ac0fb69f6882153d2aea030abe442",
+    "https://deno.land/x/lophus@0.0.6/lib/x/noble.ts": "03e7790b1c15ad4d3cbaca7928f522dd91300b3f3f98c068b05ad1b686e7b77e",
+    "https://deno.land/x/lophus@0.0.6/mod.ts": "5c7cd5924347a0ef1fb364aa54bb7c32e31d4711b11976b4e4a9109f9923051b",
+    "https://deno.land/x/lophus@0.0.6/nips/01.ts": "faa7d35a4929b4d0d086291a5e0385ede0cbe446e84f7adcff2ece5fe0330cbe"
   }
 }

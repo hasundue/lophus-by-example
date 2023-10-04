@@ -5,7 +5,7 @@
 ### Global timeline streaming
 
 ```ts
-import { Relay } from "lophus/client";
+import { Relay } from "lophus/core/relays";
 import { Timestamp } from "lophus/lib/times";
 import { ConsoleLogger } from "lophus/lib/logging";
 
@@ -29,7 +29,7 @@ new RelayPool("wss://nos.lol", "wss://relay.nostr.band")
 ### Publish a text note
 
 ```ts
-import { Relay } from "lophus/client";
+import { Relay } from "lophus/core/relays";
 import { EventPublisher } from "lophus/lib/events";
 import { env } from "lophus/lib/env";
 
@@ -47,7 +47,7 @@ new EventPublisher(relay, env.PRIVATE_KEY)
 ### Echo bot
 
 ```ts
-import { Relay } from "lophus/client";
+import { Relay } from "lophus/core/relays";
 import { Transformer } from "lophus/lib/streams";
 import { EventPublisher } from "lophus/lib/events";
 import { env } from "lophus/lib/env";
@@ -62,7 +62,7 @@ relay.subscribe({ kinds: [1], "#p": [env.PUBLIC_KEY] })
 ### Transfer your notes from relay to relay
 
 ```ts
-import { Relay } from "lophus/client";
+import { Relay } from "lophus/core/relays";
 import { EventPublisher } from "lophus/lib/events";
 import { env } from "lophus/lib/env";
 

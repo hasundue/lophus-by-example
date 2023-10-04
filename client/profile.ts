@@ -1,5 +1,5 @@
 // Publish a metadata (profile) event to the relay.
-import { Relay } from "lophus/client";
+import { Relay } from "lophus/core/relays";
 import { EventPublisher } from "lophus/lib/events";
 import { env } from "lophus/lib/env";
 
@@ -12,7 +12,7 @@ new EventPublisher(relay, env.PRIVATE_KEY)
       name: "Lophus",
       about:
         "Yet another JS/TS library for Nostr. https://github.com/hasundue/../../..",
-      picture: "",
+      picture: "https://chiezo.dev/lophus.png",
     },
   })
   .then(relay.close);

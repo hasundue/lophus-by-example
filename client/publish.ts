@@ -1,5 +1,5 @@
 // Publish a text note
-import { Relay } from "lophus/client";
+import { Relay } from "lophus/core/relays";
 import { EventPublisher } from "lophus/lib/events";
 import { env } from "lophus/lib/env";
 

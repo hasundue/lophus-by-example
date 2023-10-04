@@ -1,5 +1,5 @@
 // Transfer your notes from relay to relay
-import { Relay } from "lophus/client";
+import { Relay } from "lophus/core/relays";
 import { EventPublisher } from "lophus/lib/events";
 import { env } from "lophus/lib/env";
 

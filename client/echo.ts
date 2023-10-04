@@ -1,5 +1,5 @@
 // Echo bot
-import { Relay } from "lophus/client";
+import { Relay } from "lophus/core/relays";
 import { Transformer } from "lophus/lib/streams";
 import { EventPublisher } from "lophus/lib/events";
 import { env } from "lophus/lib/env";

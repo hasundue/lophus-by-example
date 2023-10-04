@@ -1,5 +1,5 @@
 // Global timeline streaming
-import { Relay } from "lophus/client";
+import { Relay } from "lophus/core/relays";
 import { Timestamp } from "lophus/lib/times";
 import { ConsoleLogger } from "lophus/lib/logging";
 
