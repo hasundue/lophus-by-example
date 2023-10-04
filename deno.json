@@ -6,12 +6,12 @@
   },
   "imports": {
     "lophus": "https://deno.land/x/lophus@0.0.3/mod.ts",
-    "lophus/client": "https://deno.land/x/lophus@0.0.3/client.ts",
-    "lophus/lib/times": "https://deno.land/x/lophus@0.0.3/lib/times.ts",
-    "lophus/lib/logging": "https://deno.land/x/lophus@0.0.3/lib/logging.ts",
-    "lophus/lib/streams": "https://deno.land/x/lophus@0.0.3/lib/streams.ts",
-    "lophus/lib/events": "https://deno.land/x/lophus@0.0.3/lib/events.ts",
-    "lophus/lib/env": "https://deno.land/x/lophus@0.0.3/lib/env.ts",
-    "lophus/lib/pools": "https://deno.land/x/lophus@0.0.3/lib/pools.ts"
+    "lophus/client": "https://deno.land/x/lophus@0.0.5/client.ts",
+    "lophus/lib/times": "https://deno.land/x/lophus@0.0.5/lib/times.ts",
+    "lophus/lib/logging": "https://deno.land/x/lophus@0.0.5/lib/logging.ts",
+    "lophus/lib/streams": "https://deno.land/x/lophus@0.0.5/lib/streams.ts",
+    "lophus/lib/events": "https://deno.land/x/lophus@0.0.5/lib/events.ts",
+    "lophus/lib/env": "https://deno.land/x/lophus@0.0.5/lib/env.ts",
+    "lophus/lib/pools": "https://deno.land/x/lophus@0.0.5/lib/pools.ts"
   }
 }
