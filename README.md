@@ -5,9 +5,9 @@
 ### Global timeline streaming
 
 ```ts
-import { Relay } from "lophus/core/relays";
-import { Timestamp } from "lophus/lib/times";
-import { ConsoleLogger } from "lophus/lib/logging";
+import { Relay } from "$lophus/core/relays.ts?nips=1";
+import { Timestamp } from "$lophus/lib/times.ts";
+import { ConsoleLogger } from "$lophus/lib/logging.ts";
 
 new Relay("wss://nos.lol")
   .subscribe({ kinds: [1], since: Timestamp.now })
@@ -17,9 +17,9 @@ new Relay("wss://nos.lol")
 ### Stream from multiple relays with a relay pool
 
 ```ts
-import { RelayPool } from "lophus/lib/pools";
-import { Timestamp } from "lophus/lib/times";
-import { ConsoleLogger } from "lophus/lib/logging";
+import { RelayPool } from "$lophus/lib/pools.ts";
+import { Timestamp } from "$lophus/lib/times.ts";
+import { ConsoleLogger } from "$lophus/lib/logging.ts";
 
 new RelayPool("wss://nos.lol", "wss://relay.nostr.band")
   .subscribe({ kinds: [1], since: Timestamp.now })
@@ -29,9 +29,9 @@ new RelayPool("wss://nos.lol", "wss://relay.nostr.band")
 ### Publish a text note
 
 ```ts
-import { Relay } from "lophus/core/relays";
-import { EventPublisher } from "lophus/lib/events";
-import { env } from "lophus/lib/env";
+import { Relay } from "$lophus/core/relays.ts?nips=1";
+import { EventPublisher } from "$lophus/lib/events.ts";
+import { env } from "$lophus/lib/env.ts";
 
 const relay = new Relay("wss://nos.lol");
 
@@ -47,10 +47,10 @@ new EventPublisher(relay, env.PRIVATE_KEY)
 ### Echo bot
 
 ```ts
-import { Relay } from "lophus/core/relays";
-import { Transformer } from "lophus/lib/streams";
-import { EventPublisher } from "lophus/lib/events";
-import { env } from "lophus/lib/env";
+import { Relay } from "$lophus/core/relays.ts?nips=1";
+import { Transformer } from "$lophus/lib/streams.ts";
+import { EventPublisher } from "$lophus/lib/events.ts";
+import { env } from "$lophus/lib/env.ts";
 
 const relay = new Relay("wss://nostr-dev.wellorder.net");
 
@@ -62,9 +62,9 @@ relay.subscribe({ kinds: [1], "#p": [env.PUBLIC_KEY] })
 ### Transfer your notes from relay to relay
 
 ```ts
-import { Relay } from "lophus/core/relays";
-import { EventPublisher } from "lophus/lib/events";
-import { env } from "lophus/lib/env";
+import { Relay } from "$lophus/core/relays.ts";
+import { EventPublisher } from "$lophus/lib/events.ts";
+import { env } from "$lophus/lib/env.ts";
 
 new Relay("wss://relay.nostr.band")
   .subscribe({

@@ -3,16 +3,15 @@
     "cache": "deno cache --lock=deno.lock --lock-write ./**/*.ts",
     "check": "deno check ./**/*.ts",
     "build": "deno run --allow-read=. --allow-write=. ./bin/generate_readme.ts",
-    "dev": "deno fmt && deno lint && deno task cache && deno task check && deno task build"
+    "dev": "deno fmt && deno lint && deno task cache && deno task -q check && deno task -q build"
   },
   "imports": {
-    "lophus/core/relays": "https://deno.land/x/lophus@0.0.6/core/relays.ts",
-    "lophus/core/clients": "https://deno.land/x/lophus@0.0.5/core/clients.ts",
-    "lophus/lib/times": "https://deno.land/x/lophus@0.0.6/lib/times.ts",
-    "lophus/lib/logging": "https://deno.land/x/lophus@0.0.6/lib/logging.ts",
-    "lophus/lib/streams": "https://deno.land/x/lophus@0.0.6/lib/streams.ts",
-    "lophus/lib/events": "https://deno.land/x/lophus@0.0.6/lib/events.ts",
-    "lophus/lib/env": "https://deno.land/x/lophus@0.0.6/lib/env.ts",
-    "lophus/lib/pools": "https://deno.land/x/lophus@0.0.6/lib/pools.ts"
+    "$lophus/": "https://deno.land/x/lophus@0.0.7/"
+  },
+  "compilerOptions": {
+    "types": [
+      "$lophus/core/protocol.d.ts",
+      "$lophus/nips/1/protocol.d.ts"
+    ]
   }
 }

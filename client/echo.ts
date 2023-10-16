@@ -1,8 +1,8 @@
 // Echo bot
-import { Relay } from "lophus/core/relays";
-import { Transformer } from "lophus/lib/streams";
-import { EventPublisher } from "lophus/lib/events";
-import { env } from "lophus/lib/env";
+import { Relay } from "$lophus/core/relays.ts?nips=1";
+import { Transformer } from "$lophus/lib/streams.ts";
+import { EventPublisher } from "$lophus/lib/events.ts";
+import { env } from "$lophus/lib/env.ts";
 
 const relay = new Relay("wss://nostr-dev.wellorder.net");
 

@@ -1,7 +1,7 @@
 // Transfer your notes from relay to relay
-import { Relay } from "lophus/core/relays";
-import { EventPublisher } from "lophus/lib/events";
-import { env } from "lophus/lib/env";
+import { Relay } from "$lophus/core/relays.ts?nips=1";
+import { EventPublisher } from "$lophus/lib/events.ts";
+import { env } from "$lophus/lib/env.ts";
 
 new Relay("wss://relay.nostr.band")
   .subscribe({
