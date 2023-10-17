@@ -3,7 +3,7 @@
 //
 const srcs = [
   "../client/global.ts",
-  "../client/pool.ts",
+  "../client/group.ts",
   "../client/publish.ts",
   "../client/echo.ts",
   "../client/transfer.ts",

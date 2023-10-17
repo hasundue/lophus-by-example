@@ -14,14 +14,20 @@ new Relay("wss://nos.lol")
   .pipeTo(new ConsoleLogger());
 ```
 
-### Stream from multiple relays with a relay pool
+### Stream from multiple relays with a relay group
 
 ```ts
-import { RelayPool } from "$lophus/lib/pools.ts";
+import { Relay } from "$lophus/core/relays.ts?nips=1";
+import { RelayGroup } from "$lophus/lib/relays.ts";
 import { Timestamp } from "$lophus/lib/times.ts";
 import { ConsoleLogger } from "$lophus/lib/logging.ts";
 
-new RelayPool("wss://nos.lol", "wss://relay.nostr.band")
+const relays = [
+  new Relay("wss://nos.lol"),
+  new Relay("wss://relay.nostr.band"),
+];
+
+new RelayGroup(relays)
   .subscribe({ kinds: [1], since: Timestamp.now })
   .pipeTo(new ConsoleLogger());
 ```
@@ -49,20 +55,24 @@ new EventPublisher(relay, env.PRIVATE_KEY)
 ```ts
 import { Relay } from "$lophus/core/relays.ts?nips=1";
 import { Transformer } from "$lophus/lib/streams.ts";
-import { EventPublisher } from "$lophus/lib/events.ts";
+import { EventInit, EventPublisher } from "$lophus/lib/events.ts";
 import { env } from "$lophus/lib/env.ts";
 
-const relay = new Relay("wss://nostr-dev.wellorder.net");
+const relay = new Relay("wss://nos.lol");
 
 relay.subscribe({ kinds: [1], "#p": [env.PUBLIC_KEY] })
-  .pipeThrough(new Transformer((ev) => ({ kind: 1, content: ev.content })))
+  .pipeThrough(
+    new Transformer((
+      ev,
+    ) => ({ kind: 1, content: ev.content } satisfies EventInit<1>)),
+  )
   .pipeTo(new EventPublisher(relay, env.PRIVATE_KEY));
 ```
 
 ### Transfer your notes from relay to relay
 
 ```ts
-import { Relay } from "$lophus/core/relays.ts";
+import { Relay } from "$lophus/core/relays.ts?nips=1";
 import { EventPublisher } from "$lophus/lib/events.ts";
 import { env } from "$lophus/lib/env.ts";
 
