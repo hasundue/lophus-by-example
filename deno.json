@@ -8,12 +8,13 @@
     "update": "deno task -q run --allow-write=. --allow-run=deno,git https://deno.land/x/molt@0.5.0/cli.ts check ./**/*.ts"
   },
   "imports": {
-    "$lophus/": "https://deno.land/x/lophus@0.0.8/"
+    "$lophus/": "https://deno.land/x/lophus@0.0.10/"
   },
   "compilerOptions": {
     "types": [
       "$lophus/core/protocol.d.ts",
-      "$lophus/nips/01/protocol.d.ts"
+      "$lophus/nips/01/protocol.d.ts",
+      "$lophus/nips/02/protocol.d.ts"
     ]
   }
 }

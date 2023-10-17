@@ -5,6 +5,7 @@ const srcs = [
   "../client/global.ts",
   "../client/group.ts",
   "../client/publish.ts",
+  "../client/contacts.ts",
   "../client/echo.ts",
   "../client/transfer.ts",
 ] as const;

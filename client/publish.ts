@@ -1,14 +1,9 @@
-// Publish a text note
-import { Relay } from "$lophus/core/relays.ts?nips=1";
-import { EventPublisher } from "$lophus/lib/events.ts";
-import { env } from "$lophus/lib/env.ts";
+// Publish a text note with NIP-7 extension
+import { Relay } from "$lophus/core/relays.ts?nips=1,7";
+import { Signer } from "$lophus/nips/07/signs.ts";
 
-const relay = new Relay("wss://nos.lol");
-
-new EventPublisher(relay, env.PRIVATE_KEY)
-  .publish({
+new Relay("wss://nos.lol")
+  .publish(new Signer().sign({
     kind: 1,
-    content:
-      "Hello, Nostr! This is Lophus, yet another JS/TS library for Nostr!",
-  })
-  .then(relay.close);
+    content: "This is Lophus, a fully-modular TypeScript library for Nostr.",
+  }));

@@ -32,22 +32,37 @@ new RelayGroup(relays)
   .pipeTo(new ConsoleLogger());
 ```
 
-### Publish a text note
+### Publish a text note with NIP-7 extension
 
 ```ts
-import { Relay } from "$lophus/core/relays.ts?nips=1";
-import { EventPublisher } from "$lophus/lib/events.ts";
+import { Relay } from "$lophus/core/relays.ts?nips=1,7";
+import { Signer } from "$lophus/nips/07/signs.ts";
+
+new Relay("wss://nos.lol")
+  .publish(new Signer().sign({
+    kind: 1,
+    content: "This is Lophus, a fully-modular TypeScript library for Nostr.",
+  }));
+```
+
+### Publish contact list
+
+```ts
+import { Relay } from "$lophus/core/relays.ts?nips=1,2";
+import { type PublicKey, Signer } from "$lophus/lib/signs.ts";
 import { env } from "$lophus/lib/env.ts";
 
 const relay = new Relay("wss://nos.lol");
+const signer = new Signer(env.PRIVATE_KEY);
 
-new EventPublisher(relay, env.PRIVATE_KEY)
-  .publish({
-    kind: 1,
-    content:
-      "Hello, Nostr! This is Lophus, yet another JS/TS library for Nostr!",
-  })
-  .then(relay.close);
+relay.publish(signer.sign({
+  kind: 3,
+  content: "",
+  tags: [
+    ["p", env.PUBLIC_KEY, "wss://nos.lol", "me"],
+    ["p", "02c0e..." as PublicKey, "wss://nos.lol", "friend"],
+  ],
+})).then(relay.close);
 ```
 
 ### Echo bot
@@ -56,6 +71,7 @@ new EventPublisher(relay, env.PRIVATE_KEY)
 import { Relay } from "$lophus/core/relays.ts?nips=1";
 import { Transformer } from "$lophus/lib/streams.ts";
 import { EventInit, EventPublisher } from "$lophus/lib/events.ts";
+import { Signer } from "$lophus/lib/signs.ts";
 import { env } from "$lophus/lib/env.ts";
 
 const relay = new Relay("wss://nos.lol");
@@ -66,13 +82,15 @@ relay.subscribe({ kinds: [1], "#p": [env.PUBLIC_KEY] })
       ev,
     ) => ({ kind: 1, content: ev.content } satisfies EventInit<1>)),
   )
-  .pipeTo(new EventPublisher(relay, env.PRIVATE_KEY));
+  .pipeThrough(new EventPublisher(new Signer(env.PRIVATE_KEY)))
+  .pipeTo(new Relay("wss://nos.lol"));
 ```
 
-### Transfer your notes from relay to relay
+### Transfer text notes from relay to relay
 
 ```ts
 import { Relay } from "$lophus/core/relays.ts?nips=1";
+import { Signer } from "$lophus/lib/signs.ts";
 import { EventPublisher } from "$lophus/lib/events.ts";
 import { env } from "$lophus/lib/env.ts";
 
@@ -81,5 +99,6 @@ new Relay("wss://relay.nostr.band")
     kinds: [1],
     authors: [env.PUBLIC_KEY],
   }, { realtime: false })
-  .pipeTo(new EventPublisher(new Relay("wss://nos.lol"), env.PRIVATE_KEY));
+  .pipeThrough(new EventPublisher(new Signer(env.PRIVATE_KEY)))
+  .pipeTo(new Relay("wss://nos.lol"));
 ```
