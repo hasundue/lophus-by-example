@@ -65,6 +65,7 @@
     "https://deno.land/x/lophus@0.0.10/lib/env.ts": "ca0bc2ef309682d561947d11f24ce693f79409323fe613088099fa0f4c7d7c1c",
     "https://deno.land/x/lophus@0.0.10/lib/events.ts": "34268534578f78a0d79483dc04ba2aaa77a5e6e4d371abb3d9855c18fb354c64",
     "https://deno.land/x/lophus@0.0.10/lib/logging.ts": "367194e4d8a7090ff456756b5a298c027e6176447279ededde391838aa050f8e",
+    "https://deno.land/x/lophus@0.0.10/lib/notes.ts": "32d394dd26dd78cf8cd50d2b0b70d0d82d9a25ce622e02d56b415e80362e8a75",
     "https://deno.land/x/lophus@0.0.10/lib/relays.ts": "a1523ec8c4cfc0fe1586e39ad5f83231abab7de1db372514d4836f3e320db69d",
     "https://deno.land/x/lophus@0.0.10/lib/signs.ts": "f184dc79034a5ab3212e5c6914e5172e7a375f65fcf52d2e37041a7d436647fd",
     "https://deno.land/x/lophus@0.0.10/lib/std/streams.ts": "4999846634a88797cfb3a43d3342f4991618887a457799561e3019ebaacad490",
