@@ -8,7 +8,7 @@
     "update": "deno task -q run --allow-write=. --allow-run=deno,git https://deno.land/x/molt@0.14.3/cli.ts check ./**/*.ts"
   },
   "imports": {
-    "$lophus/": "https://deno.land/x/lophus@0.0.10/"
+    "$lophus/": "https://deno.land/x/lophus@0.0.13/"
   },
   "compilerOptions": {
     "types": [
